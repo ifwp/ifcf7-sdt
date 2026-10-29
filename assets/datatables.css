@@ -1,0 +1,299 @@
+div.dt-container div.dt-info:not(:empty) {
+    margin-bottom: 1rem;
+}
+div.dt-container div.dt-paging > nav:not(:empty) {
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    div.dt-container div.dt-info:not(:empty) {
+        margin-bottom: 0;
+    }
+}
+div.dt-container div.dt-processing {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 500px;
+    max-width: 90%;
+}
+div.dt-container div.dt-buttons:not(.dtsb-searchBuilder) {
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    div.dt-container div.dt-buttons:not(.dtsb-searchBuilder) {
+        /* The buttons do come first: the gap belongs on their right. */
+        margin-right: 1rem;
+        margin-bottom: 0;
+    }
+}
+/*
+ * A plain collection is 200px wide whatever its labels say (width: 200px in the bootstrap 4
+ * styling of Buttons), so a long one does spill out of it. Growing to fit needs both the auto
+ * width and items that refuse to wrap.
+ */
+div.dropdown-menu.dt-button-collection:not(.fixed) {
+    min-width: 200px;
+    width: auto;
+}
+div.dropdown-menu.dt-button-collection:not(.fixed) .dt-button {
+    white-space: nowrap;
+}
+/*
+ * The other way around for the fixed ones, whose width is set: their items inherit the nowrap of
+ * dropdown-item, so a long label is clipped and runs under the tick of the active ones (which do
+ * reserve room for it with a padding-right of 3em). Meta keys carry no spaces to break at either,
+ * hence the overflow-wrap.
+ */
+div.dropdown-menu.dt-button-collection.fixed .dt-button {
+    overflow-wrap: break-word;
+    white-space: normal;
+    word-wrap: break-word;
+}
+/* Items of the same row share their height once any of them takes two lines. */
+div.dropdown-menu.dt-button-collection.columns > :last-child {
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+/*
+ * The overlay of the fixed collections is already there, sized and positioned, but with no colour
+ * of its own: giving it one is what tells the column list apart from the table behind it.
+ */
+div.dt-button-background {
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+div.dtsb-searchBuilder {
+    /* mb-0 */
+    margin-bottom: 0 !important;
+}
+div.dtsb-searchBuilder:not(:empty) {
+    /* border */
+    border: 1px solid #dee2e6 !important;
+    /* px-3 */
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    /* pt-3 */
+    padding-top: 1rem !important;
+    /* bg-white */
+    background-color: #fff !important;
+    /* rounded */
+    border-radius: 0.25rem !important;
+    /* mb-3 */
+    margin-bottom: 1rem !important;
+}
+div.dtsb-searchBuilder div.dtsb-titleRow {
+    height: 38px;
+    /* d-flex */
+    display: -ms-flexbox !important;
+    display: flex !important;
+    /* justify-content-between */
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important;
+    /* align-items-center */
+    -ms-flex-align: center !important;
+    align-items: center !important;
+    /* mb-3 */
+    margin-bottom: 1rem !important;
+}
+div.dtsb-searchBuilder div.dtsb-titleRow div.dtsb-title {
+    /* pt-0 */
+    padding-top: 0 !important;
+}
+div.dtsb-searchBuilder div.dtsb-titleRow button.dtsb-clearAll {
+    /* mb-0 */
+    margin-bottom: 0 !important;
+}
+div.dtsb-searchBuilder select.dtsb-data,
+div.dtsb-searchBuilder select.dtsb-condition {
+    max-width: 12rem;
+}
+table.table.dataTable thead th {
+    border-top: 0;
+    border-bottom: 0;
+}
+table.table.dataTable thead tr > th:first-child {
+    border-left: 0;
+}
+table.table.dataTable thead tr > th:last-child {
+    border-right: 0;
+}
+table.table.dataTable tbody tr > td:first-child {
+    border-left: 0;
+}
+table.table.dataTable tbody tr > td:last-child {
+    border-right: 0;
+}
+table.table.dataTable tbody tr:last-child > td {
+    border-bottom: 0;
+}
+table.table.dataTable tbody td {
+    max-width: 25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+table.table.dataTable tbody td:hover {
+    overflow: visible;
+    white-space: normal;
+}
+div.ifcf7-attachments-container div.ifcf7-attachment-container + div.ifcf7-attachment-container {
+    margin-top: 0.5rem;
+}
+div.ifcf7-sdt-sidebar {
+    background-color: #fff;
+    bottom: 0;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    left: 0;
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    width: 34rem;
+    z-index: 1035;
+}
+div.ifcf7-sdt-sidebar.show {
+    -webkit-transform: none;
+    transform: none;
+}
+div.ifcf7-sdt-sidebar div.ifcf7-sdt-sidebar-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+div.ifcf7-sdt-sidebar div.ifcf7-sdt-sidebar-header,
+div.ifcf7-sdt-sidebar div.ifcf7-sdt-sidebar-footer {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder:last-child {
+    /* mb-0 */
+    margin-bottom: 0 !important;
+}
+/*
+ * The search builder stacks its fields under 550px of *viewport* width. The sidebar is narrow no
+ * matter how wide the viewport is, so these are the very rules of that media query (SearchBuilder
+ * 1.8.4, searchBuilder.bootstrap4.css), applied in there unconditionally. Worth re-syncing
+ * whenever the SearchBuilder version does change.
+ */
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: start;
+    justify-content: start;
+    margin-bottom: 0;
+    padding-right: calc(35px + 0.8em);
+    /* Not in the original: the button container below is absolute, and the sidebar itself is a
+    positioned ancestor it must not anchor to. */
+    position: relative;
+}
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria:not(:first-child),
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria:not(:nth-child(2)),
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria:not(:last-child) {
+    padding-top: 0.8em;
+}
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria:first-child,
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria:nth-child(2),
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria:last-child {
+    padding-top: 0;
+}
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria select.dtsb-dropDown,
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria input.dtsb-input {
+    margin-bottom: 0.8em;
+    margin-right: 0.8em;
+    max-width: none;
+    width: 100%;
+}
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria div.dtsb-inputCont {
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    /* The very same box as the data and condition selects above (width plus that margin is what
+    the padding-right of the criteria reserves), so the three of them do line up. */
+    margin-bottom: 0.8em;
+    margin-right: 0.8em;
+    width: 100%;
+}
+/*
+ * The "between" conditions do put two fields plus their joiner in that single container. Sharing
+ * one row is what the upstream stylesheet does with a width of 33% each, but the rule above (and
+ * the mobile one it comes from) overrides it with a full width, so the second field overflows.
+ * Flexing them takes care of the two of them and of the single field case alike.
+ */
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria div.dtsb-inputCont input.dtsb-input,
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria div.dtsb-inputCont input.dtsb-value,
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria div.dtsb-inputCont select.dtsb-dropDown,
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria div.dtsb-inputCont select.dtsb-value {
+    -ms-flex: 1 1 0;
+    flex: 1 1 0;
+    height: auto;
+    /* The container carries the spacing now: equal margins are what keeps every item, the joiner
+    included, centered on the same line. */
+    margin-bottom: 0;
+    margin-right: 0;
+    /* Fields do carry an intrinsic minimum width: without this they refuse to shrink. */
+    min-width: 0;
+    width: auto;
+}
+/* Select2 does hide the value dropdown behind a container of its own. */
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria div.dtsb-inputCont span.select2 {
+    -ms-flex: 1 1 0;
+    flex: 1 1 0;
+    min-width: 0;
+}
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria div.dtsb-inputCont span.dtsb-joiner {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    margin: 0 0.5em;
+}
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria div.dtsb-buttonContainer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+    position: absolute;
+    right: 0;
+    width: 35px;
+}
+div.ifcf7-sdt-sidebar div.dtsb-searchBuilder div.dtsb-group div.dtsb-criteria div.dtsb-buttonContainer button {
+    margin-right: 0 !important;
+}
+div.ifcf7-sdt-sidebar-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1030;
+}
+div.ifcf7-sdt-sidebar-backdrop.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+body.ifcf7-sdt-sidebar-open {
+    overflow: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+    div.ifcf7-sdt-sidebar,
+    div.ifcf7-sdt-sidebar-backdrop {
+        -webkit-transition: none;
+        transition: none;
+    }
+}
